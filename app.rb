@@ -141,7 +141,7 @@ class App < Roda
           # novinky.cz logo replace
           if a = noko.at_css("a.ogm-header-big-logo")
             a.children.remove
-            a << img('<img src="/public/logo.gif"/>')
+            a << img('<img src="/public/novinky-logo.gif"/>')
           end
           
           noko.css('base').remove
@@ -280,7 +280,7 @@ class App < Roda
             %w[ href src srcset ].each do |attr|
 
               next unless node[attr]
-              next if node[attr] =~ /^\/public\/(favicon.ico|logo.gif)/ # already replaced
+              next if node[attr] =~ /^\/public\/(favicon.ico|novinky-logo.gif)/ # already replaced
 
               if node[attr] !~ /^(https?:\/\/|\/\/)/
                 node[attr] = "#{@proto}://#{@domain}#{node[attr]}"
@@ -295,7 +295,7 @@ class App < Roda
         # add srackomat link to the top unless in iframe
         unless r['in_iframe']
           if noko.css('head').length>0
-            noko.css('head').first.prepend_child html("<link rel='stylesheet' type='text/css' href='/public/logo.css?#{File.open('public/logo.css').mtime.to_i}'/>")
+            noko.css('head').first.prepend_child html("<link rel='stylesheet' type='text/css' href='/public/srackomat-logo.css?#{File.open('public/srackomat-logo.css').mtime.to_i}'/>")
             noko.css('body').first.prepend_child html("<div id='srackomat-logo'><a href='/'>Sračkomat</a></div>")
           end
         end

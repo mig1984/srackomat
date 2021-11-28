@@ -121,3 +121,12 @@ form button[type="submit"][value="simple"] {
   height:40px;
 }
 
+.copyright {
+  text-align:center;
+}
+
+.copyright a, .copyright a:visited {
+  font-size:1rem;
+  margin-top:50px;
+  color:#777777;
+}
