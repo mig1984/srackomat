@@ -276,11 +276,13 @@ class App < Roda
         # /foo.jpg => proto://domain/foo.jpg
         begin
           noko.xpath("//*[self::link or self::img or self::script or self::source]").each do |node|
+
+            node.remove_attribute('srcset')
             
-            %w[ href src srcset ].each do |attr|
+            %w[ href src ].each do |attr|
 
               next unless node[attr]
-              next if node[attr] =~ /^\/public\/(favicon.ico|novinky-logo.gif)/ # already replaced
+              next if node[attr] =~ /^\/public\/(favicon\.ico|novinky-logo\.gif)/ # already replaced
 
               if node[attr] !~ /^(https?:\/\/|\/\/)/
                 node[attr] = "#{@proto}://#{@domain}#{node[attr]}"
