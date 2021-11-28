@@ -1,0 +1,21 @@
+#srackomat-logo {
+  z-index:10000;
+  position:fixed;
+  text-align:center;
+  top:-5px; /* border radius hide */
+  width:100%;
+}
+
+#srackomat-logo a {
+  font-family: 'Open Sans', sans-serif;
+  display:block;
+  background-color: rgba(165,102,13,0.8);
+  border-radius: 0.4rem;
+  width:200px;
+  padding:7px;
+  padding-top:12px;
+  margin:auto;
+  color: white;
+  text-decoration:none;
+  font-weight:bold;
+}

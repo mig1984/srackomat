@@ -1,0 +1,31 @@
+%h1 Sračkomat
+
+%div{id: 'container'}
+  %h2 vybrané adresy:
+    
+  %ul
+    %li
+      %a{href: '/advanced/https/www.novinky.cz'} Novinky.cz
+    %li
+      %a{href: '/advanced/https/www.seznamzpravy.cz'} Seznam Zprávy
+    %li
+      %a{href: '/advanced/https/www.idnes.cz'} iDNES.cz
+    %li
+      %a{href: '/advanced/https/www.irozhlas.cz'} iRozhlas.cz
+    %li
+      %a{href: '/advanced/https/www.denik.cz'} denik.cz
+    %li
+      %a{href: '/advanced/https/www.parlamentnilisty.cz'} Parlamentní Listy
+    %li
+      %a{href: '/advanced/https/www.sport.cz'} Sport.cz
+    %li
+      %a{href: '/simple/https/www.pocasi.cz'} Počasí.cz
+    %li
+      %a{href: '/simple/https/onemocneni-aktualne.mzcr.cz/covid-19'} COVID-19
+      
+%form{action: '/', method: 'post'}
+  %input{name: 'url', placeholder: 'vlastní URL...'}
+  %button{type: 'submit', name: 'level', value: 'simple'}
+    Rozesrat Simple(TM)
+  %button{type: 'submit', name: 'level', value: 'advanced'}
+    Rozesrat Advanced(TM)

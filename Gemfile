@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'puma'
+gem 'roda'
+gem 'rack-unreloader'
+gem 'httpclient'
+gem 'i18n'
+gem 'nokogiri'
+gem 'tilt'
+gem 'haml'

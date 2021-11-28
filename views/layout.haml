@@ -1,0 +1,10 @@
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %link{rel:"preconnect", href:"https://fonts.googleapis.com"}
+    %link{rel:"preconnect", href: "https://fonts.gstatic.com", crossorigin: 'crossorigin'}
+    %link{href: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap", rel: "stylesheet"}
+    %link{rel: 'stylesheet', type:'text/css', href: "/public/styly.css?#{File.open('public/styly.css').mtime.to_i}"}
+    %link{rel: "shortcut icon", href:"/public/favicon.ico", type: "image/x-icon"}
+    %meta{name:"viewport", content: "width=device-width,height=device-height,initial-scale=0.8"}
+  %body= yield 

@@ -1,0 +1,123 @@
+html {
+  background: linear-gradient(135deg, #844d00, #a5a503);
+  background-size: 400% 400%;
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  margin:auto;
+  max-width:1000px;
+  font-size:25px;
+}
+
+a {color:white}
+
+h1 {
+  text-align: center;
+  position: relative;
+  color:black;
+  padding:20px;
+  padding-right: 0%;
+  margin:0;
+  min-height:80px;
+  color:#eeeeee;
+  font-weight:bold;
+  font-size:5rem;
+}
+
+#container {
+  padding-left:1rem;
+}
+
+input {
+  font-size:25pt;
+  min-height:5rem;
+  min-width:8rem;
+  transition: all .2s ease-in-out;
+}
+
+
+form {
+  border-radius: 0.4rem;
+  display:flex;
+  justify-content: space-between;
+  flex-flow: row;
+  background-color: rgba(0,0,0,0.5);
+  padding:1.2rem;
+  margin-top: 2rem;
+}
+
+form input[name='url'] {
+  flex: 8;
+  padding-left:10px;
+  margin-right:20px;
+}
+
+form button[type="submit"] {
+  flex: 1;
+  font-family: 'Open Sans', sans-serif;
+  font-size:1.4rem;
+}
+
+form button[type="submit"][value="simple"] {
+  margin-right:20px;
+}
+
+@media (max-width: 600px) {
+  form {
+    flex-flow: column;
+  }
+
+  form input[name='url'] {
+    margin-right:0;
+    margin-bottom:5px;
+  }
+
+  form button[type="submit"][value="simple"] {
+    margin-right:0;
+    margin-bottom:5px;
+  }
+
+}
+
+@keyframes inputColorAnimation {
+  0%   {background-color: white;}
+  100% {background-color: #ddd;}
+}
+
+ form button[type="submit"]:hover {
+  background-color: white;
+  border: none;
+  transform: scale(1.05);
+  animation-name: inputColorAnimation;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  outline-style: solid;
+  outline-width: 0.01rem;
+}
+
+ form input[name='url']:hover {
+  transform: scale(1.02, 1.2);
+
+  animation-name: inputColorAnimation;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  outline-style: solid;
+  outline-width: 0.01rem;
+  border: none;
+  
+}
+
+ form input[name='url']:focus {
+  background-color: #ddd;
+  transform: scale(1.02, 1.2);
+  outline-style: solid;
+  outline-width: 0.01rem;
+  border:none;
+}
+
+ form input {
+  height:40px;
+}
+
