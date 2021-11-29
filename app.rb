@@ -173,7 +173,7 @@ class App < Roda
               a = if @level=='lite'
                 %W( sračky )
               else
-                %W( sračky hovna zvratky píčoviny kokotiny demence covid covid-19 korona koronavirus )
+                %W( sračky hovna zvratky píčoviny kokotiny demence covid )
               end
               s = a[rand(a.length)]
               case typ
@@ -190,7 +190,7 @@ class App < Roda
               a = if @level=='lite'
                 %W( sraček )
               else
-                %W( sraček hoven zvratků píčovin kokotin covidů koronavirů )
+                %W( sraček hoven zvratků píčovin kokotin covidů )
               end
               s = a[rand(a.length)]
               case typ
