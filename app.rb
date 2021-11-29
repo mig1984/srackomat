@@ -167,7 +167,7 @@ class App < Roda
                     rep=~/^\d+(\.\d+)?$/
 
             squared = lambda { rand(20)==0 ? '²' : '' } # sracky²
-            nineteen = lambda { rand(20)==0 ? '-19' : '' }
+            nineteen = lambda { rand(7)==0 ? '-19' : '' }
 
             sracka1 = lambda do |typ|
               a = if @level=='lite'
