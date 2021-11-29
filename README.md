@@ -6,9 +6,10 @@ Rozchození:
 
 1. nainstalovat ruby
 2. gem install bundler puma
-3. bundle install
-4. export ENVIRONMENT=development
+3. cd srackomat.git
+4. bundle install
+5. export ENVIRONMENT=development
    (nebo source ./env.sh)
-5. bundle exec puma
+6. bundle exec puma
 
 => http://localhost:9292
