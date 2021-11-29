@@ -166,8 +166,8 @@ class App < Roda
                     rep=~/^\s*\d+(\.\d+)?\s*%$/ || 
                     rep=~/^\d+(\.\d+)?$/
 
-            # sracky²
-            squared = lambda { rand(20)==0 ? '²' : '' }
+            squared = lambda { rand(20)==0 ? '²' : '' } # sracky²
+            nineteen = lambda { rand(20)==0 ? '-19' : '' }
 
             sracka1 = lambda do |typ|
               a = if @level=='lite'
@@ -178,7 +178,7 @@ class App < Roda
               s = a[rand(a.length)]
               case typ
                 when :upcase
-                  s.upcase << squared.call 
+                  s.upcase << nineteen.call << squared.call
                 when :camelize
                   s[0].upcase << s[1..-1] << squared.call
                 when :normal
@@ -195,7 +195,7 @@ class App < Roda
               s = a[rand(a.length)]
               case typ
                 when :upcase
-                  s.upcase << squared.call 
+                  s.upcase << nineteen.call << squared.call
                 when :camelize
                   s[0].upcase << s[1..-1] << squared.call 
                 when :normal
