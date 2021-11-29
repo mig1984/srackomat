@@ -186,11 +186,26 @@ class App < Roda
               end
             end
 
-            sracka4 = lambda do |typ|
-              a = if @level=='lite'
-                %W( sraček )
-              else
-                %W( sraček hoven zvratků píčovin kokotin covidů )
+            sracka4 = lambda do |n, typ|
+              a = case n
+                when 1
+                  if @level=='lite'
+                    %W( sračka )
+                  else
+                    %W( sračka hovno zvratek píčovina kokotina covid )
+                  end
+                when 2..4
+                  if @level=='lite'
+                    %W( sračky )
+                  else
+                    %W( sračky hovna zvratky píčoviny kokotiny covidy )
+                  end
+                else
+                  if @level=='lite'
+                    %W( sraček )
+                  else
+                    %W( sraček hoven zvratků píčovin kokotin covidů )
+                  end
               end
               s = a[rand(a.length)]
               case typ
@@ -219,18 +234,18 @@ class App < Roda
                 if (1900..2055).member?($1.to_i)
                   # the number is in interval => nominativ (as normal)
                   if ($1.to_i==1) # the number equals one
-                    $1.to_i+rand(20000000).to_s << select_sracka1.call($3, $4, $5)
+                    $1 << select_sracka1.call($3, $4, $5)
                   else
                     $1 << select_sracka1.call($3, $4, $5)
                   end
                 else
                   # otherwise add sracka in accusative after the number
                   if $3
-                    $1 << sracka4.call(:camelize)
+                    $1 << sracka4.call($1, :camelize)
                   elsif $4
-                    $1 << sracka4.call(:normal)
+                    $1 << sracka4.call($1, :normal)
                   elsif $5
-                    $1 << sracka4.call(:upcase)
+                    $1 << sracka4.call($1, :upcase)
                   end
                 end
               else
