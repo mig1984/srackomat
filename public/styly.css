@@ -58,7 +58,7 @@ form button[type="submit"] {
   font-size:1.4rem;
 }
 
-form button[type="submit"][value="simple"] {
+form button[type="submit"][value="lite"] {
   margin-right:20px;
 }
 
@@ -72,7 +72,7 @@ form button[type="submit"][value="simple"] {
     margin-bottom:5px;
   }
 
-  form button[type="submit"][value="simple"] {
+  form button[type="submit"][value="lite"] {
     margin-right:0;
     margin-bottom:5px;
   }

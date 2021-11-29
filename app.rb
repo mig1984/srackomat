@@ -170,7 +170,7 @@ class App < Roda
             squared = lambda { rand(20)==0 ? '²' : '' }
 
             sracka1 = lambda do |typ|
-              a = if @level=='simple'
+              a = if @level=='lite'
                 %W( sračky )
               else
                 %W( sračky hovna zvratky píčoviny kokotiny demence )
@@ -187,7 +187,7 @@ class App < Roda
             end
 
             sracka4 = lambda do |typ|
-              a = if @level=='simple'
+              a = if @level=='lite'
                 %W( sraček )
               else
                 %W( sraček hoven zvratků píčovin kokotin )
