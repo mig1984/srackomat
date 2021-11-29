@@ -166,14 +166,17 @@ class App < Roda
                     rep=~/^\s*\d+(\.\d+)?\s*%$/ || 
                     rep=~/^\d+(\.\d+)?$/
 
-            squared = lambda { rand(20)==0 ? '²' : '' } # sracky²
+            squared = lambda { rand(20)==0 && @level!='sick' ? '²' : '' } # sracky²
             nineteen = lambda { rand(7)==0 ? '-19' : '' }
 
             sracka1 = lambda do |typ|
-              a = if @level=='lite'
-                %W( sračky )
-              else
-                %W( sračky hovna zvratky píčoviny kokotiny demence covid )
+              a = case @level
+                when 'lite'
+                  %W( sračky )
+                when 'sick'
+                  %W( covid mrtvý zemřelí tragédie krach smrt globálně očkovaní neočkovaní dezinformace zabití ohrožení kolaps brutální poškození likvidace rasismus EU Rusko konec násilí zabíjení krize nebezpečně apokalypsa neuvěřitelný covidioti idioti koronavirus drastický podvod zuřivý )
+                else
+                  %W( sračky hovna zvratky píčoviny kokotiny demence covid )
               end
               s = a[rand(a.length)]
               case typ
@@ -189,22 +192,31 @@ class App < Roda
             sracka4 = lambda do |n, typ|
               a = case n.to_i
                 when 1
-                  if @level=='lite'
-                    %W( sračka )
-                  else
-                    %W( sračka hovno zvratek píčovina kokotina covid )
+                  case @level
+                    when 'lite'
+                      %W( sračka )
+                    when 'sick'
+                      %W( covid mrtvý zemřelý tragédie krach smrt očkování dezinformace zabití ohrožení kolaps smrt rasismus EU Rusko konec násilí krize apokalypsa covidiot koronavirus podvod )
+                    else
+                      %W( sračka hovno zvratek píčovina kokotina covid )
                   end
                 when 2..4
-                  if @level=='lite'
-                    %W( sračky )
-                  else
-                    %W( sračky hovna zvratky píčoviny kokotiny covidy )
+                  case @level
+                    when 'lite'
+                      %W( sračky )
+                    when 'sick'
+                      %W( covidů mrtvých zemřelých tragédií krachů smrtí očkování dezinformací zabití ohrožení kolapsů rasismů EU Ruska konců násilí krizí apokalyps covidiotů koronavirů podvodů )
+                    else
+                      %W( sračky hovna zvratky píčoviny kokotiny covidy )
                   end
                 else
-                  if @level=='lite'
-                    %W( sraček )
-                  else
-                    %W( sraček hoven zvratků píčovin kokotin covidů )
+                  case @level
+                    when 'lite'
+                      %W( sraček )
+                    when 'sick'
+                      %W( covidů mrtvých zemřelých tragédií krachů smrtí očkování dezinformací zabití ohrožení kolapsů rasismů EU Ruska konců násilí krizí apokalyps covidiotů koronavirů podvodů )
+                    else
+                      %W( sraček hoven zvratků píčovin kokotin covidů )
                   end
               end
               s = a[rand(a.length)]
