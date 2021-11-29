@@ -231,16 +231,12 @@ class App < Roda
             # as if it was just one word...
             rep.gsub!(/idnes\.\w+|novinky\.\w+|seznam zpr.vy/i,'Xxx')
 
-            rep.gsub!(/([ \s]+[\d,]+[ \s]*)?(([.A-ZÁČĎĚÉÍŇÓŘŠŤÚǓÝŽÜÖÄËŸ][.a-záčďéěíňóřšťúůýžüöäÿ]+)|([.a-záčďéěíňóřšťúůýžüöäÿ]+)|([.A-ZÁČĎĚÉÍŇÓŘŠŤÚǓÝŽÜÖÄËŸ]+))/) do
+            rep.gsub!(/([  \s]+[\d,]+[  \s]*)?(([.A-ZÁČĎĚÉÍŇÓŘŠŤÚǓÝŽÜÖÄËŸ][.a-záčďéěíňóřšťúůýžüöäÿ]+)|([.a-záčďéěíňóřšťúůýžüöäÿ]+)|([.A-ZÁČĎĚÉÍŇÓŘŠŤÚǓÝŽÜÖÄËŸ]+))/) do
 
               if $1 # there is a number 
                 if (1900..2055).member?($1.to_i)
                   # the number is in interval => nominativ (as normal)
-                  if ($1.to_i==1) # the number equals one
-                    $1 << select_sracka1.call($3, $4, $5)
-                  else
-                    $1 << select_sracka1.call($3, $4, $5)
-                  end
+                  $1 << select_sracka1.call($3, $4, $5)
                 else
                   # otherwise add sracka in accusative after the number
                   if $3
