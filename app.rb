@@ -228,7 +228,10 @@ class App < Roda
               end
             end
 
-            rep.gsub!(/([ \s]+[\d,]+[ \s]+)?(([A-ZÁČĎĚÉÍŇÓŘŠŤÚǓÝŽÜÖÄËŸ][a-záčďéěíňóřšťúůýžüöäÿ]+)|([a-záčďéěíňóřšťúůýžüöäÿ]+)|([A-ZÁČĎĚÉÍŇÓŘŠŤÚǓÝŽÜÖÄËŸ]+))/) do
+            # as if it was just one word...
+            rep.gsub!(/idnes\.\w+|novinky\.\w+|seznam zpr.vy/i,'Xxx')
+
+            rep.gsub!(/([ \s]+[\d,]+[ \s]*)?(([.A-ZÁČĎĚÉÍŇÓŘŠŤÚǓÝŽÜÖÄËŸ][.a-záčďéěíňóřšťúůýžüöäÿ]+)|([.a-záčďéěíňóřšťúůýžüöäÿ]+)|([.A-ZÁČĎĚÉÍŇÓŘŠŤÚǓÝŽÜÖÄËŸ]+))/) do
 
               if $1 # there is a number 
                 if (1900..2055).member?($1.to_i)
