@@ -174,7 +174,7 @@ class App < Roda
                 when 'lite'
                   %W( sračky )
                 when 'sick'
-                  %W( covid mrtví zemřelí tragédie krach smrt globálně očkovaní neočkovaní dezinformace zabití ohrožení kolaps brutální poškození likvidace rasismus EU Rusko konec násilí zabíjení krize nebezpečně apokalypsa neuvěřitelní covidioti idioti koronavirus drastický podvod zuřivý absolutně útočící nejistota )
+                  %W( covid mrtví zemřelí tragédie krach smrt globálně očkovaní neočkovaní šílení dezinformace zabití ohrožení kolaps brutální poškození likvidace rasismus EU Rusko konec násilí zabíjení krize nebezpečně apokalypsa neuvěřitelní covidioti idioti koronavirus drastický podvod zuřivý absolutně útočící nejistota )
                 else
                   %W( sračky hovna zvratky píčoviny kokotiny demence covid )
               end
@@ -196,7 +196,7 @@ class App < Roda
                     when 'lite'
                       %W( sračka )
                     when 'sick'
-                      %W( mrtvý zemřelý tragédie krach smrt očkovaní zabitý covidiot koronavirus )
+                      %W( mrtvý zemřelý tragédie krach smrt očkovaní zabitý covidiot koronavirus šílenec )
                     else
                       %W( sračka hovno zvratek píčovina kokotina covid )
                   end
@@ -207,14 +207,14 @@ class App < Roda
                     when 'sick'
                       %W( mrtví zemřelí zabití ohrožení covidioti )
                     else
-                      %W( sračky hovna zvratky píčoviny kokotiny covidy )
+                      %W( sračky hovna zvratky píčoviny kokotiny covidy šílenci )
                   end
                 else
                   case @level
                     when 'lite'
                       %W( sraček )
                     when 'sick'
-                      %W( mrtvých zemřelých očkovaných zabití ohrožení apokalyps covidiotů koronavirů podvodů )
+                      %W( mrtvých zemřelých očkovaných zabití ohrožení apokalyps covidiotů koronavirů podvodů šílenců )
                     else
                       %W( sraček hoven zvratků píčovin kokotin covidů )
                   end
