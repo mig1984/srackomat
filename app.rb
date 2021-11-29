@@ -173,7 +173,7 @@ class App < Roda
               a = if @level=='lite'
                 %W( sračky )
               else
-                %W( sračky hovna zvratky píčoviny kokotiny demence )
+                %W( sračky hovna zvratky píčoviny kokotiny demence covid )
               end
               s = a[rand(a.length)]
               case typ
@@ -190,7 +190,7 @@ class App < Roda
               a = if @level=='lite'
                 %W( sraček )
               else
-                %W( sraček hoven zvratků píčovin kokotin )
+                %W( sraček hoven zvratků píčovin kokotin covidů )
               end
               s = a[rand(a.length)]
               case typ
@@ -218,7 +218,11 @@ class App < Roda
               if $1 # there is a number 
                 if (1900..2055).member?($1.to_i)
                   # the number is in interval => nominativ (as normal)
-                  $1 << select_sracka1.call($3, $4, $5)
+                  if ($1.to_i==1) # the number equals one
+                    $1.to_i+rand(20000000).to_s << select_sracka1.call($3, $4, $5)
+                  else
+                    $1 << select_sracka1.call($3, $4, $5)
+                  end
                 else
                   # otherwise add sracka in accusative after the number
                   if $3
