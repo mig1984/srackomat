@@ -158,6 +158,7 @@ class App < Roda
             rep = node.content.to_s
             
             next if rep=~/^[Dd]nes \d?\d:\d\d/ || 
+                    rep=~/pondělí|úterý|středa|čtvrtek|pátek|sobota|neděle/i ||
                     rep=~/^\s*\d\d:\d\d\s*$/ || 
                     rep=~/Vykradeno|Vytunelo/ || 
                     rep=~/celý článek|čas čtení.*?minut|Vytisknout|Diskuse|Váš komentář|Komentáře|Obsah vydání|Rubriky|nejnovější|oblíbené|Nejsdílenější dnes|Nejčtenější|Týden|Měsíc|Rok|Vše/m ||
@@ -175,7 +176,7 @@ class App < Roda
                 when 'lite'
                   %W( sračky )
                 when 'sick'
-                  %W( covid mrtví zemřelí tragédie krach smrt globálně očkovaní neočkovaní šílení dezinformace zabití ohrožení kolaps brutální poškození likvidace rasismus EU Rusko konec násilí zabíjení krize nebezpečně apokalypsa neuvěřitelní covidioti idioti koronavirus drastický podvod zuřivý absolutně útočící nejistota )
+                  %W( covid mrtví zemřeli tragédie krach smrt globálně očkovaní neočkovaní šílení dezinformace zabití ohrožení kolaps brutální poškození likvidace rasismus EU Rusko konec násilí zabíjejí krize nebezpečně apokalypsa neuvěřitelně covidioti idioti koronavirus drastický zuřivě absolutně útočící nejistota šíření vrazi vražedně nenávist )
                 else
                   %W( sračky hovna zvratky píčoviny kokotiny demence covid )
               end
