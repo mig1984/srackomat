@@ -158,7 +158,6 @@ class App < Roda
             rep = node.content.to_s
             
             next if rep=~/^[Dd]nes \d?\d:\d\d/ || 
-                    rep=~/pondělí|úterý|středa|čtvrtek|pátek|sobota|neděle/i ||
                     rep=~/^\s*\d\d:\d\d\s*$/ || 
                     rep=~/Vykradeno|Vytunelo/ || 
                     rep=~/celý článek|čas čtení.*?minut|Vytisknout|Diskuse|Váš komentář|Komentáře|Obsah vydání|Rubriky|nejnovější|oblíbené|Nejsdílenější dnes|Nejčtenější|Týden|Měsíc|Rok|Vše/m ||
