@@ -70,7 +70,7 @@ class App < Roda
       
       @domain = ary[1]
       
-      if @domain =~ 'generaliceska.cz'
+      if @domain =~ /generaliceska.cz/
         r.redirect 'https://generaliceska.cz'
       end
 
