@@ -69,6 +69,10 @@ class App < Roda
       ary = r.remaining_path.split('/')
       
       @domain = ary[1]
+      
+      if @domain =~ 'generaliceska.cz'
+        r.redirect 'https://generaliceska.cz'
+      end
 
       @path = ary[2..-1].join('/')
       @path << '/' if r.env['PATH_INFO'][-1] == '/'  # trailing slash is necessary sometimes, repeat it
